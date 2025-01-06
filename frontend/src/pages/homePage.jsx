@@ -1,7 +1,7 @@
 // Homepage rendering, where every code meets to create final webpage
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Navigation from '../components/navigation';
-import TitleDivider from '../components/title'; // Updated to ensure we're using TitleDivider correctly
+import TitleDivider from '../components/title';
 import UIcards from '../components/homepage-UIcards';
 import SortBy from '../components/sortBy';
 import LoadingScreen from '../components/loadingPage';
