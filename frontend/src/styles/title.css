@@ -1,0 +1,60 @@
+/* General Styles for hero title */
+.moving-title.paused .moving-text-wrapper, .moving-title.paused #Layer_12 {animation-play-state: paused;}
+@keyframes slide { 0% {transform: translateX(0);} 100% {transform: translateX(-50%);}}
+@keyframes rotate { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+
+/* Hero title for mobile devices */
+@media screen and (max-width: 768px) {
+.title-container {background-color: #1e1e1f; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding-top: 2.4em; padding-bottom: 0.6em;}
+.static-title {margin-bottom: 20px; padding-left: 0.8em; padding-right: 0.8em;  z-index: 3;}
+
+/* Moving title styles */
+.title-with-icon {display: flex; align-items: center; white-space: nowrap;}
+.moving-title {position: relative; margin-top: -3em; width: 100%; overflow: hidden; z-index: 2;}
+.moving-title::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; 
+background: linear-gradient(to right, rgba(30, 30, 31, 1) 0%, rgba(30, 30, 31, 0) 2%), linear-gradient(to left, rgba(30, 30, 31, 1) 0%, rgba(30, 30, 31, 0) 2%);}
+.moving-title h1 {font-weight: 200 !important; letter-spacing: -1.8px;}
+.moving-text-wrapper {display: inline-flex; align-items: center; animation: slide var(--animation-speed, 40s) linear infinite;}
+.moving-text {display: inline-flex; align-items: center; padding-right: 72px;}
+
+/* SVG icon styles for rotation and size */
+#Layer_12 {padding-left: 0.05em; padding-right: 0.03em; margin-top: 0.5em; width: 1.1em;  height: 1.1em; animation: rotate var(--animation-speed, 12s) linear infinite;}
+}
+
+
+/* Hero title for tablet devices */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+.title-container {background-color: #1a1a1f; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding-top: 2.6em; padding-bottom: 2.8em;}
+.static-title {margin-bottom: 20px; padding-left: 3em; padding-right: 50%;  z-index: 3;}
+
+/* Moving title styles */
+.title-with-icon {display: flex; align-items: center; white-space: nowrap;}
+.moving-title {position: relative; margin-top: -3.1em; width: 100%; overflow: hidden; z-index: 2;}
+.moving-title::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; 
+background: linear-gradient(to right, rgba(30, 30, 31, 1) 0%, rgba(30, 30, 31, 0) 5%), linear-gradient(to left, rgba(30, 30, 31, 1) 0%, rgba(30, 30, 31, 0) 5%);}
+.moving-title h1 {font-weight: 200 !important; letter-spacing: -2.8px;}
+.moving-text-wrapper {display: inline-flex; align-items: center; animation: slide 32s linear infinite;}
+.moving-text {display: inline-flex; align-items: center; padding-right: 62px;}
+
+/* SVG icon styles for rotation and size */
+#Layer_12 {padding-left: 0.02em; padding-right: 0.02em; margin-top: 0.4em; width: 1.2em;  height: 1.2em;  animation: rotate 10s linear infinite;}
+}
+
+
+/* Hero title for desktop devices */
+@media screen and (min-width: 1025px) {
+.title-container {display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin: 0 auto; position: relative;}
+.static-title {z-index: 2; width: 50%; white-space: nowrap; text-align: center;}
+
+/* Moving title styles */
+.title-with-icon {display: flex; align-items: center; white-space: nowrap;}
+.moving-title {display: flex; justify-content: flex-start; align-items: center; overflow: hidden; width: 70%; position: relative; margin-top: -1.4vw;}
+.moving-title::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; 
+background: linear-gradient(to right, rgba(30, 30, 31, 1) 0%, rgba(30, 30, 31, 0) 10%), linear-gradient(to left, rgba(30, 30, 31, 1) 0%, rgba(30, 30, 31, 0) 10%); background-blend-mode: screen;}
+.moving-title h1 {font-weight: 200 !important; letter-spacing: -3px;}
+.moving-text-wrapper {display: flex; white-space: nowrap; align-items: center; animation: slide var(--animation-speed, 40s) linear infinite;}
+.moving-text {display: inline-flex; align-items: center; padding-right: 74px; mix-blend-mode: difference;}
+
+/* SVG icon styles for rotation and size */
+#Layer_12 {padding-left: 0.04em; padding-right: 0.04em; margin-top: 0.4em; width: 1.05em;  height: 1.05em; animation: rotate var(--animation-speed, 12s) linear infinite;}
+}

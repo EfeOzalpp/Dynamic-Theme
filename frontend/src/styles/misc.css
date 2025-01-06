@@ -1,0 +1,17 @@
+/* Firework q5-canvas styles */
+canvas {background-color: #1e1e1f;} /* Background colors just incase to avoid color flickering */
+.firework-divider {pointer-events: none; display: block; position: absolute; height: 60vw; width: 100%; background-color: #1e1e1f;}
+.q5Canvas {display: block; width: 100% !important; margin-top: -12vw; height: 125% !important; overflow: hidden; background-color: #1e1e1f;}
+
+/* Loading Screen Styles */
+.loading-screen {
+    background-color: #1e1e1f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100.1%;
+    height: 100.1%;
+    display: flex;
+    transition: opacity 0.3s ease, background-color 0.3s ease; /* Smooth color transitions */
+    z-index: 9999;
+  }

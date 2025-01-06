@@ -1,0 +1,80 @@
+/* Global Styles for UI-cards (homepage) */
+.image-container:hover .title-text, .image-container:hover .svg-icon {scale: 1.04; transition: scale 0.1s ease-in;}
+.image-container:hover, .image-container2:hover {scale: 1.03;}
+
+/* Homepage and UI-card styles for mobile  */
+@media screen and (max-width: 768px) {
+.homePage-container {background-color: #1a1a1f;}
+.card-divider {padding-left: 0.8em; padding-right: 0.8em;}
+.UI-card-divider {padding-top: 3.4vw; z-index: 300;}   
+.card-container {display: block; height: 128vw;}
+
+/* For profile photos */
+.image-container img {width: 100%; height: 110vw; object-fit: cover; border-radius: 2px; box-shadow: 2px 2px 5px rgba(19, 19, 19, 0.1), 4px 4px 10px rgba(28, 28, 28, 0.2);}
+.image-container {position: relative; display: flex; flex-direction: column;}
+
+/* For illustration */
+.image-container2 img {width: 86vw; height: 110vw; object-fit: cover; border-radius: 2px;}
+.image-container2 {position: relative; display: flex; scale: 1.02; flex-direction: column; z-index: 1;}
+
+/* Link hit box styles */
+.ui-link::after {content: ''; position: absolute; top: 0; border-radius: 2px; left: 0; width: 90vw; height: 110vw; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 78%, rgba(0, 0, 0, 0.753));}
+.ui-link {width: 90vw;}
+
+/* Card title and icon */
+h-name, h-name a {flex-grow: 1; display: flex; justify-content: space-between; align-items: center; position: relative; color: white; margin-top: auto; z-index: 10; bottom: 6.6vw; padding-right: 10px;}
+.title-text {padding-left: 16px; position: absolute;} 
+.svg-icon {width: 1em; height: 1em; padding-right: 16px; display: inline-block; margin-left: auto;} .svg-icon:hover {transform: translateX(2px); transition: transform 150ms ease-out;}
+}
+
+
+/* Homepage and UI-card styles for tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+.homePage-container {background-color: #1a1a1a;}
+.card-divider {padding-left: 0.8em; padding-right: 0.8em;}
+.UI-card-divider {top: calc(64vw); position: relative; padding-top: 4.8vw; z-index: 300; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;}   
+.card-container {margin-top: -133%; display: block; height: 100%; padding-bottom: 4.6vw;}
+ 
+/* For profile photo */
+.image-container img {width: 92%; height: 62vw; object-fit: cover; border-radius: 2px; box-shadow: 0 4px 6px rgba(32, 32, 32, 0.08), 0 1px 3px rgba(33, 34, 32, 0.08);}
+.image-container {position: relative; display: flex; flex-direction: column;}
+
+/* For illustration */
+.image-container2 img {width: 92%; height: 60vw; object-fit: cover; border-radius: 2px;}
+.image-container2 {position: relative; display: flex; scale: 1.02; flex-direction: column; z-index: 1;}
+
+/* Link hit box styles */
+.ui-link::after {content: ''; position: absolute; border-radius: 2px; top: 0; left: 0; width: 92%; height: 62vw; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 78%, rgba(0, 0, 0, 0.753));}
+.ui-link {width: 100%;}
+
+/* Card title and icon */
+h-name, h-name a {width: 90%; flex-grow: 1; display: flex; justify-content: space-between; align-items: center; position: relative; color: white; margin-top: auto; z-index: 10; bottom: 3.4vw; padding-right: 0px;}
+.title-text {padding-left: 24px; position: absolute;}
+.svg-icon {width: 1em; height: 1em; padding-right: 7%; display: inline-block; margin-left: auto;} .svg-icon:hover {transform: translateX(2px); transition: transform 150ms ease-out;}
+}
+
+
+/* Homepage and UI-card styles for desktop */
+@media screen and (min-width: 1025px) {
+.homePage-container {background-color: #1a1a1a;}
+.card-divider {padding-left: 0.8em; padding-right: 0.8em;}
+.UI-card-divider {top: calc(36vw); position: relative; padding-top: 2.4vw; z-index: 300; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;}   
+.card-container {margin-top: -133%; display: block; height: 100%; padding-bottom: 4.6vw;}
+
+/* For profile photo */
+.image-container img {width: 90%; height: 32vw; object-fit: cover; border-radius: 4px; box-shadow: 0 4px 6px rgba(32, 32, 32, 0.08), 0 1px 3px rgba(33, 34, 32, 0.08);}
+.image-container {position: relative; display: flex; flex-direction: column;}
+
+/* For illustration */
+.image-container2 img {width: 92%; height: 32vw; object-fit: cover; border-radius: 4px;}
+.image-container2 {position: relative; display: flex; scale: 1.02; flex-direction: column; z-index: 1;}
+
+/* Link hit box styles */
+.ui-link::after {content: ''; position: absolute; border-radius: 4px; top: 0; left: 0; width: 90%; height: 32vw; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 78%, rgba(0, 0, 0, 0.753));}
+.ui-link {width: 100%;}
+
+/* Card title and icon */
+h-name, h-name a {width: 90%; flex-grow: 1; display: flex; justify-content: space-between; align-items: center; position: relative; color: white; margin-top: auto; z-index: 10; bottom: 1.8vw; padding-right: 0px;}
+.title-text {padding-left: 32px; position: absolute;}
+.svg-icon {width: 1em; height: 1em; padding-right: 7%; display: inline-block; margin-left: auto;} .svg-icon:hover {transform: translateX(2px); transition: transform 150ms ease-out;}
+}

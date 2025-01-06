@@ -1,0 +1,240 @@
+/* Font and spacer styles */
+
+/* General styles */
+body {margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Orbitron', 'Rubik', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+body #homePage {background-color: #1e1e1f;}
+div {background-color: transparent;}
+.no-overflow {overflow: hidden;}
+a { text-decoration: none;}
+.section-divider, .section-divider2, .section-divider3 {background-color: #1e1e1f;}
+h-title a {color: #ffffff;}
+label p {color: #c4c4c4;}
+
+/* Mobile general styles */
+@media screen and (max-width: 768px) {
+
+/* Padding and spacers for Mobile */  
+body #homePage {padding-left: 0.8em; padding-right: 0.8em;}
+.section-divider {height: 12.4vw;} .section-divider2 {height: 8.8vw;} .section-divider3 {height: 0.2vw; margin-top: -0.6em;}
+
+/* Fonts */
+h1 {
+  font-size: clamp(68px, 10.6vw, 156px); 
+  color: #f0f0f0;
+  font-family: 'Orbitron', 'Oxygen', 'ubuntu', 'Cantarell', sans-serif; 
+  font-weight: 400;
+  margin-top: 0px; margin-bottom: 4px; line-height: 82px;
+}
+
+h1 a:hover {font-size: calc(1.1 * clamp(50px, 8vw, 100px));}
+
+h2 {
+  color: #f4f4f4;
+  font-size: calc(0.9 * clamp(50px, 8vw, 100px));
+  font-family: 'rubik';
+  font-weight: 500;
+  text-decoration: none; 
+}
+
+h-name { 
+  color: #f7f7f7;
+  font-size: clamp(22px, 1.2vw, 58px);
+  font-family: 'rubik'; font-weight: 500; letter-spacing: 1.4px;
+  margin: 0px;
+}
+
+h3 {
+  color: #f7f7f7;
+  font-size: clamp(28px, 7.4vw, 68px);
+  font-family: 'rubik'; font-weight: 400; letter-spacing: 1.4px;
+  margin: 14px 0 12px 0;
+}
+
+h4 {
+  color: #f5f5f5;
+  font-size: clamp(21px, 3.6vw, 38px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 9px 0 11px 0;
+}
+
+h5 {
+  color: #f6f6f6;
+  font-size: clamp(16px, 3.8vw, 40px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 0px;
+}  
+
+/*site title special font */
+h-title {
+  color: #fff;
+  font-size: clamp(24px, 4.8vw, 48px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 0px;
+}
+
+p, .p {
+  color: #f5f5f5;
+  font-size: clamp(12px, 4vw, 36px);
+  font-family: 'rubik'; font-weight: 400; letter-spacing: 0.4px;
+ } 
+}
+
+
+/* Tablet general styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+/* General padding and spacers for tablet */ 
+body #homePage {padding-left: 1.6em; padding-right: 1.6em;}
+.section-divider {height: 8.4vw;} .section-divider2 {height: 1.8vw;} .section-divider3 {height: 0.2vw; margin-top: -0.6em;}
+
+/* Fonts */
+h1 {
+  font-size: clamp(48px,10.8vw, 142px); 
+  color: #f0f0f0;
+  font-family: 'Orbitron', 'Oxygen', 'ubuntu', 'Cantarell', sans-serif; 
+  font-weight: 400;
+  margin-top: 0vw; margin-bottom: 0.2vw; letter-spacing: -1.2px;
+}
+
+h1 a:hover {font-size: calc(1.1 * clamp(50px, 8vw, 100px));}
+
+h2 {
+  color: #f2f2f2;
+  font-size: clamp(34px, 6.2vw, 72px);
+  font-family: 'rubik';
+  font-weight: 500;
+  text-decoration: none;
+}
+
+h3 {
+  color: #f7f7f7;
+  font-size: clamp(24px, 4.4vw, 68px);
+  font-family: 'rubik'; font-weight: 400; letter-spacing: 1.4px;
+  margin: 22px 0 18px 0;
+}
+
+h-name {
+  color: #f4f4f4;
+  font-size: clamp(10px, 2.8vw, 40px);
+  font-family: 'rubik';
+  font-weight: 500;
+  letter-spacing: 0.4px;  
+}
+
+h4 {
+  color: #f4f4f4;
+  font-size: clamp(16px, 3.2vw, 40px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 16px 0 14px 0;
+}
+
+h5 {
+  color: #f6f6f6; 
+  font-size: clamp(12px, 2.6vw, 24px); 
+  font-family: 'rubik'; 
+  font-weight: 400; 
+  letter-spacing: 0.4px;
+  margin: 0px;
+}
+
+/* Site title special font */
+h-title {
+  color: #ffffff;
+  font-size: clamp(22px, 5.4vw, 36px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 0px;
+}  
+
+p, .p {
+  color: #f5f5f5;
+  font-size: clamp(8px, 2.4vw, 30px);
+  font-family: 'rubik'; font-weight: 400; letter-spacing: 0.4px;
+ }  
+}
+
+
+/* Desktop general styles */
+@media screen and (min-width: 1025px) {
+
+/* General padding and spacers for Desktop */ 
+body #homePage {padding-left: 7.8em; padding-right: 7.8em;}
+.section-divider {height: 4.8vw;} .section-divider2 {height: 0vw;} .section-divider3 {height: 0.2vw; margin-top: -0.6em;}
+
+/* Fonts */
+h1 {
+  font-size: clamp(76px, 3.4vw, 120px); 
+  color: #f0f0f0;
+  font-family: 'Orbitron', 'Oxygen', 'ubuntu', 'Cantarell', sans-serif; 
+  font-weight: 400; letter-spacing: -2.8px;
+  margin-top: 0vw; margin-bottom: 0.2vw;
+}
+
+h1 a:hover {font-size: calc(1.1 * clamp(50px, 8vw, 100px));}
+
+h2 {
+  color: #f2f2f2;
+  font-size: clamp(58px, 3vw, 90px); 
+  font-family: 'rubik';
+  font-weight: 300;
+  text-decoration: none;
+}
+
+h3 {
+  color: #f7f7f7;
+  font-size: clamp(34px, 1.6vw, 52px);
+  font-family: 'rubik'; font-weight: 400; letter-spacing: 1.4px;
+  margin: 16px 0 14px 0;
+}
+
+h-name {
+  color: #f4f4f4;
+  font-size: clamp(10px, 1.4vw, 48px);
+  font-family: 'rubik';
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+h4 {
+  color: #f4f4f4;
+  font-size: clamp(18px, 1.4vw, 44px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 16px 0 14px 0;
+}
+
+h5 {color: #f6f6f6;
+  font-size: clamp(8px, 1.1vw, 16px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 0px;
+}
+
+/* Site title special font */
+h-title {
+  color: #ffffff;
+  font-size: clamp(18px, 3.6vw, 24px);
+  font-family: 'rubik';
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin: 0px;
+}  
+
+
+p, .p {
+  color: #f5f5f5;
+  font-size: clamp(6px, 1vw, 24px);
+  font-family: 'rubik'; font-weight: 400; letter-spacing: 0.4px;
+ }  
+}

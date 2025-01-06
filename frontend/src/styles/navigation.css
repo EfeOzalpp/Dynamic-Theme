@@ -1,0 +1,233 @@
+/* Navigation menu style code for mobile devices */
+/* General Styles */
+.no-scroll {overflow: hidden;}
+.top-bar-items {display: flex; align-items: center; justify-content: space-between; z-index: 700; position: relative;}
+.image-container-g::-webkit-scrollbar {display: none;}
+
+/* Mobile view */
+@media (max-width: 768px) {
+.navigation {position: fixed; top: 0; width: 100%; transition: transform 0.2s ease-in-out; z-index: 1000; align-items: center;}
+.navigation.hidden {transform: translateY(-100%); width: 100%;} 
+.navigation.visible { transform: translateY(0);}
+
+/* Hamburger menu and site title positioning */
+.top-bar-items {padding-left: 0.8em; padding-right: 0.8em; padding-top: 10px; padding-bottom: 10px; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);}
+.menu-icon {cursor: pointer; display: flex; align-items: center; position: relative; width: 24px; height: 24px;}
+
+/* Hamburger menu opened-closed state styles */
+.hamburger {position: relative; width: 20px; height: 3.2px; background-color: #fff; transition: all 0.2s ease;}
+.hamburger::before, .hamburger::after {content: ''; position: absolute;
+width: 24px; height: 3.2px; background-color: #fff; transition: all 0.2s ease;}
+.hamburger::before {top: -7px;}
+.hamburger::after {top: 7px; }
+.hamburger.open {background-color: transparent;}
+.hamburger.open::before {transform: rotate(45deg); top: 0;}
+.hamburger.open::after {transform: rotate(-45deg); top: 0;}
+
+/* Menu open items */
+.nav-links {list-style: none; display: flex; gap: 20px; transition: transform 0.2s ease;}
+.nav-links li {margin: 0;}
+.nav-links a {text-decoration: none; color: #fff;font-weight: 500;}
+.nav-links.open {display: block;}
+.nav-links {position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
+align-items: center; display: none; transform: translateY(-20px);} 
+.nav-links.open {display: flex; transform: translateY(0);}
+.nav-link {position: relative; width: 100%; display: inline-flex; justify-content: flex-start; align-items: center;}
+.nav-link:hover {scale: 1.008; transition: 0.05s ease-in; transform: translateX(1px);}
+
+/* Menu is open */
+div.menu-item.open {height: 100vh; width: 100%; top: 0; left: 0; position: fixed; z-index: 300;} div.menu-item {height: 0px; top: 0; left: 0; position: fixed; z-index: 300;}
+div.menu-item.open .menu-item-2::after {pointer-events: none; content:''; background: linear-gradient(to bottom, var(--darkenedColor) 0%, rgba(30, 30, 31, 0) 5%); height: 100%; width: 100%; position: absolute; top: 0; left: 0;}
+div.menu-item-1 {position: absolute;} div.menu-item-2 {height: 100%; width: 68%; margin-left: 32%; z-index: 500;}
+div.menu-item div.menu-item-1 {transition: 0.2s ease-in;} div.menu-item.open div.menu-item-1 {height: 100vh; width: 100vw; background: rgba(42, 42, 42, 0.174);}
+div.menu-item.open .menu-item-1 {backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); transition: 0.1s ease-in-out;}
+div.menu-item div.menu-item-2 {transform: translateX(100%); backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px); transition: 0.1s ease-in-out;}
+div.menu-item.open .menu-item-2 {transform: translateX(0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); background-color: var(--darkenedColor); border-left: var(--darkerColor) 2px solid;}
+div.menu-item.open h4, div.menu-item.open h3 {color: #fbfbfb; padding-left: 0em;} div.menu-item h4, div.menu-item h3 {color: var(--darkenedColor); transition: 0.2s ease-in;}
+div.menu-item-2 {box-sizing: border-box; padding-left: 0.8em; padding-right: 0.8em;}
+.menu-nav {display: flex; flex-direction: column; padding-top: 4.2em; padding-bottom: 1.2em;}
+
+/* Gallery Styles */
+.gallery-wrapper {display: flex; flex-direction: row; height: 100%; align-items: stretch;}
+.gallery-container {overflow-y: auto; overflow-x: hidden; flex: 1; display: flex; flex-direction: column; padding-bottom: 0px; scrollbar-width: none; -webkit-overflow-scrolling: touch; height: 100%; padding-bottom: 24px;}
+.gallery-container::after {pointer-events: none; content:''; background: linear-gradient(to top, var(--darkenedColor) 1%, rgba(30, 30, 31, 0) 6%); z-index: 500; position: absolute; top: 8px; left: 0; width: 100%; height: 100%;}
+.gallery-container img:not(:first-child) {margin-top: 4px;}
+.gallery-container::-webkit-scrollbar {display: none;}
+.gallery-container img.gallery-image {width: 100%; border-radius: 2px;}
+.gallery-title {display: inline-block; padding-top: 1.6em; padding-bottom: 0.6em;}
+.image-container-g {padding-left: 6px; padding-right: 3px; display: flex; flex-direction: column; flex-wrap: nowrap; align-items: center; justify-content: flex-start; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; padding-bottom: 27svh; height: 100%; border-radius: 2px 2px 0px 0px;}
+
+/* SVG icon styles */
+.arrow1 {width: 1.3em; padding-right: 12%; display: inline-block; margin-left: auto;}
+.arrow2 {width: 23px; height: 23px; transform: rotate(180deg); display: inline-block;}
+.arrow3 {width: 1.3em; display: inline-block; margin-left: auto;}
+
+/* Full progress bar container */
+.scroll-indicator {position: relative; height: 100%; width: 4px; margin: 0; top: 0;
+left: 0; background: var(--edgeColor, #444); border-radius: 0; flex-shrink: 0; border-radius: 2px; overflow: hidden;}
+.scroll-indicator::after {content: ''; position: absolute; left: 0; top: 0;
+width: 100%; height: var(--progress-dimension, 2%); background: #fff; transition: height 0.1s ease-in-out, top 0.1 ease-in-out;}
+
+/* Scroll hint adjustments */
+.scroll-hint {display: flex; flex-direction: column-reverse; align-items: center; position: absolute; bottom: 0%; left: 21%; z-index: 1000; gap: 18px; background: #222222; border: var(--darkerColor) 1.6px solid; padding: 8px 18px 18px 18px; border-radius: 2px; text-align: center; opacity: 1; transition: opacity 0.8s ease-out; 
+animation: scrollHintMove 1s infinite alternate ease-in-out;}
+@keyframes scrollHintMove {0% {bottom: 6%; } 100% {bottom: 4%; }}
+
+/* Footer */
+.footer {position: relative; z-index: 8000; padding-top: 2.4em; padding-bottom: 5.6em;}
+.nav-link-2 {position: relative; padding: 4px 38px 4px 16px; width: 86%; display: inline-flex; justify-content: flex-start; align-items: center;}
+.nav-link-2:hover {scale: 1.008; transition: 0.05s ease-in; transform: translateX(1px); background-color: #222222; border-radius: 2px;}
+}
+
+
+/* Navigation menu style code for tablet devices */
+@media (min-width: 768px) and (max-width: 1024px) { 
+.navigation {position: fixed; top: 0; width: 100%; transition: transform 0.2s ease-in-out; z-index: 1000; align-items: center;}
+.navigation.hidden {transform: translateY(-100%); width: 100%;} 
+.navigation.visible { transform: translateY(0);}
+.top-bar-items {padding-top: 12px; padding-bottom: 12px;}
+
+/* Hamburger menu and site title positioning  */
+.menu-icon {margin-right: 1.6em; cursor: pointer; display: flex; align-items: center; position: relative; width: 34px; height: 24px;}
+.site-title {margin-left: 1.6em;}  
+
+/* Hamburger menu opened-closed state styles */
+.hamburger {position: relative; width: 30px; height: 4.2px; background-color: #fff; transition: all 0.2s ease;}
+.hamburger::before, .hamburger::after {content: ''; position: absolute;
+  width: 36px; height: 4.2px; background-color: #fff; transition: all 0.2s ease;}
+.hamburger::before {top: -10px;}
+.hamburger::after {top: 10px;}
+.hamburger.open {background-color: transparent;}
+.hamburger.open::before {transform: rotate(45deg); top: 0;}
+.hamburger.open::after {transform: rotate(-45deg); top: 0;}
+
+/* Menu open items */
+.nav-links {list-style: none; display: flex; gap: 20px; transition: transform 0.2s ease;}
+.nav-links li {margin: 0;}
+.nav-links a {text-decoration: none;color: #fff;font-weight: 500;}
+.nav-links.open {display: block;}
+.nav-links {position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column;
+align-items: center; display: none; transform: translateY(-20px);}
+.nav-links.open {display: flex; transform: translateY(0);}
+.nav-link {position: relative; width: 100%; display: inline-flex; justify-content: flex-start; align-items: center;}
+.nav-link:hover {scale: 1.008; transition: 0.05s ease-in; transform: translateX(1px);}
+
+/* Menu is open */
+div.menu-item.open {height: 100vh; width: 100%; top: 0; left: 0; position: fixed; z-index: 300;} div.menu-item {height: 0px; top: 0; left: 0; position: fixed; z-index: 300;}
+div.menu-item-1 {position: absolute;} div.menu-item-2 {height: 100%; width: 60%; margin-left: 40%; z-index: 500;}
+div.menu-item div.menu-item-1 {transition: 0.2s ease-in;} div.menu-item.open div.menu-item-1 {height: 100vh; width: 100vw; background: rgba(42, 42, 42, 0.174);}
+div.menu-item.open .menu-item-1 {backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); transition: 0.1s ease-in-out;}
+div.menu-item div.menu-item-2 {transform: translateX(100%); backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px); transition: 0.1s ease-in-out;}
+div.menu-item.open .menu-item-2 {transform: translateX(0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); background-color: var(--darkenedColor); border-left: var(--darkerColor) 1px solid;}
+div.menu-item.open h4, div.menu-item.open h3 {color: #fbfbfb; padding-left: 0em;} div.menu-item h4, div.menu-item h3 {color: var(--darkenedColor); transition: 0.2s ease-in;}
+.menu-nav {display: flex; flex-direction: column; padding-top: 5.8em; padding-bottom: 2.4em;}
+div.menu-item-2 {box-sizing: border-box; padding-left: 1.6em; padding-right: 2.2em; display: flex; overflow:hidden; flex-direction: column; justify-content: space-between;}
+
+/* Gallery Styles */
+.gallery-wrapper {display: flex; flex-direction: row; height: 100%; align-items: stretch;}
+.gallery-container {overflow-y: auto; overflow-x: hidden; flex: 1; display: flex; flex-direction: column; padding-bottom: 0px; scrollbar-width: none; -webkit-overflow-scrolling: touch; height: 100%; padding-bottom: 24px;}
+.gallery-container::after {pointer-events: none; content:''; background: linear-gradient(to top, var(--darkenedColor) 1%, rgba(30, 30, 31, 0) 6%); z-index: 500; position: absolute; top: 8px; left: 0; width: 100%; height: 100%;}
+.gallery-container img {position: relative; z-index: 390;}
+.gallery-container img:not(:first-child) {margin-top: 4px;}
+.gallery-container::-webkit-scrollbar {display: none;}
+.gallery-container img.gallery-image {width: 100%; border-radius: 2px;}
+.gallery-title {display: inline-block; padding-top: 2.6em;}
+.image-container-g {padding-left: 12px; display: flex; flex-direction: column; flex-wrap: nowrap; align-items: center; justify-content: flex-start; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; padding-bottom: 25svh; height: 100%; border-radius: 2px 2px 0px 0px;}
+
+/* SVG icon styles */
+.arrow1 {width: 1.6em; height: 1.6em; padding-right: 25%; display: inline-block; margin-left: auto;}
+.arrow2 {width: 23px; height: 23px; transform: rotate(180deg); display: inline-block;}
+.arrow3 {width: 1.6em; height: 1.6em; padding-right: 25%; display: inline-block; margin-left: auto;}
+
+/* Full progress bar container */
+.scroll-indicator {position: relative; height: 100%; width: 6px; margin: 0; top: 0;
+left: 0; background: var(--edgeColor, #444); border-radius: 0; flex-shrink: 0; border-radius: 2px; overflow: hidden;}
+.scroll-indicator::after {content: ''; position: absolute; left: 0; top: 0;
+width: 100%; height: var(--progress-dimension, 2%); background: #fff; transition: height 0.1s ease-in-out, top 0.1 ease-in-out;}
+
+/* Scroll hint adjustments */
+.scroll-hint {display: flex; align-items: center; position: absolute; bottom: 0%; left: 25.5%; z-index: 1000; gap: 18px; background: #222222; border: var(--darkerColor) 1.6px solid; padding: 20px 20px 20px 24px; border-radius: 2px; text-align: center; opacity: 1; transition: opacity 0.8s ease-out; 
+animation: scrollHintMove 1s infinite alternate ease-in-out;}
+@keyframes scrollHintMove {0% {bottom: 12%; } 100% {bottom: 10%;}}
+
+/* Footer */
+.footer {position: relative; z-index: 8000; padding-top: 3.4em; padding-bottom: 8.2em;}
+.nav-link-2 {padding: 3px 38px 7px 38px; position: relative; width: 92%; display: inline-flex; justify-content: flex-start; align-items: center;}
+.nav-link-2:hover {scale: 1.008; transition: 0.05s ease-in; transform: translateX(1px); background-color: #222222; border-radius: 2px;}
+}
+
+
+/* Navigation menu style code for desktop */
+@media (min-width: 1025px) {
+.navigation {position: fixed; width: 100%; transition: transform 0.2s ease-in-out; z-index: 1000; display: flex; align-items: center; justify-content: center;}
+.navigation.hidden {transform: translateY(-100%); width: 100%;} 
+.navigation.visible { transform: translateY(0);}
+.top-bar-items {padding-top: 11px; padding-bottom: 11px; display: flex; align-items: center; justify-content: center; z-index: 700; width: 100%; position: relative;}
+
+/* Hamburger menu and site title positioning  */
+.menu-icon {margin-left: 1.2em; cursor: pointer; display: flex; align-items: center; position: relative; width: 34px; height: 24px;}
+.site-title {margin-right: 1.2em;}  
+
+/* Hamburger menu opened-closed state styles */
+.hamburger {position: relative; width: 22px; height: 2.4px; background-color: #fff; transition: all 0.2s ease;}
+.hamburger::before, .hamburger::after {content: ''; position: absolute; width: 26px; height: 2.4px; background-color: #fff; transition: all 0.2s ease;}
+.hamburger::before {top: -8px;}
+.hamburger::after {top: 8px;}
+.hamburger.open {background-color: transparent;}
+.hamburger.open::before {transform: rotate(45deg); top: 0;}
+.hamburger.open::after {transform: rotate(-45deg); top: 0;}
+
+/* Menu open items */
+.nav-links {list-style: none; display: flex; gap: 20px; transition: transform 0.2s ease;}
+.nav-links li {margin: 0;}
+.nav-links a {text-decoration: none;color: #fff;font-weight: 500;}
+.nav-links.open {display: block;}
+.nav-links {position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; align-items: center; display: none; transform: translateY(-20px);}
+.nav-links.open {display: flex; transform: translateY(0);}
+.nav-link {position: relative; width: 100%; display: inline-flex; justify-content: flex-start; align-items: center;}
+.nav-link:hover {scale: 1.008; transition: 0.05s ease-in; transform: translateX(2px);}
+
+/* Menu is open */
+div.menu-item.open {height: 100.1vh; width: 100%; top: 0; position: fixed; z-index: 300;} div.menu-item {height: 0px; top: 0; left: 0; width: 100%; position: fixed; z-index: 300;}
+div.menu-item-1 {position: absolute;}
+div.menu-item div.menu-item-1 {transition: 0.2s ease-in;} div.menu-item.open div.menu-item-1 {height: 100vh; width: 100vw; background: rgba(42, 42, 42, 0.174);}
+div.menu-item.open .menu-item-1 {backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); transition: 0.1s ease-in-out;}
+div.menu-item div.menu-item-2 {transform: translateX(100%); backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px); transition: 0.1s ease-in-out;}
+div.menu-item.open .menu-item-2 {transform: translateX(0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); background-color: var(--darkenedColor); border-left: var(--darkerColor) 1px solid;}
+div.menu-item-2 {height: 100%; width: calc(50% + 84px); margin-left: calc(50% - 84px); z-index: 500; box-sizing: border-box; padding-left: 1.6em; padding-right: 1.6em; display: flex; overflow:hidden; flex-direction: column; justify-content: space-between;}
+div.menu-item.open h4, div.menu-item.open h3 {color: #fbfbfb; padding-left: 0em;} div.menu-item h4, div.menu-item h3 {color: var(--darkenedColor); transition: 0.2s ease-in;}
+.menu-nav {display: flex; flex-direction: column; padding-top: 6.2em; padding-bottom: 1.8em; flex-shrink: 0;}
+
+/* Gallery Styles */
+.gallery-wrapper {position: relative; overflow: hidden; height: calc(100% - 40px); display: flex; flex-direction: column; justify-content: center;}
+.gallery-wrapper::after {pointer-events: none; content:''; background: linear-gradient(to left, var(--darkenedColor) 2%, rgba(30, 30, 31, 0) 7%); z-index: 500; position: absolute; top: 0; left: 10px; width: 100%; height: 100%;}
+.gallery-container img:not(:first-child) {margin-left: 4px;}
+.gallery-container::-webkit-scrollbar {display: none;}
+.gallery-container img.gallery-image {height: 100%; border-radius: 2px; object-fit: contain;}
+.gallery-title {display: inline-block; padding-top: 1.6em;}
+.gallery-container {overflow-y: hidden; position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 2px; flex: 1; display: flex; padding-bottom: 1.4em;}
+.image-container-g {display: flex; flex-direction: row; flex-wrap: nowrap; align-items: flex-start; justify-content: flex-start; overflow-y: hidden; overflow-x: auto; scrollbar-width: none; padding-right: 24px;}
+
+/* SVG icon styles */
+.arrow1 {width: 1.2em; height: 1.2em; padding-right: 25%; display: inline-block; margin-left: auto;}
+.arrow2 {width: 18px; height: 18px; transform: rotate(-90deg); display: inline-block;}
+.arrow3 {width: 1.2em; height: 1.2em; padding-right: 25%; display: inline-block; margin-left: auto;}
+
+/* Full progress bar container */
+.scroll-indicator {position: relative; top: 0; left: 0; height: 4px;
+background: var(--edgeColor, #444); width: 100%; border-radius: 2px; overflow: hidden; margin-bottom: 8px;}
+.scroll-indicator::before {content: ''; position: absolute; top: 0; left: 0; height: 100%;
+width: var(--progress-dimension, 2%); background: #fff; transition: width 0.1s ease-in-out;}
+
+/* Scroll hint overlay */
+.scroll-hint { position: absolute; top: 43.5%; background: #222222; border: var(--darkerColor) 1.6px solid; padding: 13px 12px 13px 18px; border-radius: 2px; text-align: center; opacity: 1; transition: opacity 0.8s ease-out; pointer-events: none; z-index: 10; display: flex; align-items: center; gap: 12px;  
+animation: scrollHintMove 1s infinite alternate ease-in-out; transition: opacity 0.2s ease-out;}
+@keyframes scrollHintMove {0% {left: 4%;} 100% {left: 5%;}}
+
+/* Footer */
+.footer {position: relative; z-index: 8000; padding-top: 4.8em; padding-bottom: 6.2em;}
+.nav-link-2 {padding: 4px 0px 2px 48px; position: relative; width: 100%; display: inline-flex; justify-content: flex-start; align-items: center;}
+.nav-link-2:hover {scale: 1.008; transition: 0.05s ease-in; transform: translateX(2px); background-color: #222222;}
+}
+    
+  
