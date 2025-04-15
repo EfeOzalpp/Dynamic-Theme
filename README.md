@@ -1,4 +1,4 @@
-![MockupRender1](https://github.com/user-attachments/assets/44cd773e-a223-42f6-a35a-913d7af2bdc7)
+![MockupRender2](https://github.com/user-attachments/assets/e62a6fcf-3316-43ea-b74b-c7e674d624cd)
 
 ## Dynamic Media Institute Web App Development and UI/UX, 2025.
 
